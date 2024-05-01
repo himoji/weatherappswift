@@ -1,9 +1,15 @@
 import SwiftUI
 
 struct WeatherView: View {
-    @State public var selectedDate: Date = Date()
+    @State private var selectedDate: Date = Date()
     @State private var isDatePickerVisible: Bool = false
     
+    var dateRange: ClosedRange<Date> {
+        let minDate = Calendar.current.date(byAdding: .day, value: -7, to: Date()) ?? Date()
+        let maxDate = Calendar.current.date(byAdding: .day, value: 7, to: Date()) ?? Date()
+        return minDate...maxDate
+    }
+
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [Color.blue, Color.white]), startPoint: .topLeading, endPoint: .bottomTrailing)
@@ -12,11 +18,11 @@ struct WeatherView: View {
             VStack {
                 VStack {
                     HStack {
-
+                        Spacer()
                         Text("Astana")
                             .font(.largeTitle)
                             .fontWeight(.bold)
-
+                        Spacer()
                         Text("🇰🇿")
                             .font(.title)
                             .padding(.trailing, 10)
@@ -33,8 +39,6 @@ struct WeatherView: View {
                         Text("💨")
                     }
                     .font(.title)
-                    .padding(.top, 10)
-                    .padding(.horizontal)
                     
                     Spacer()
                     
@@ -47,25 +51,46 @@ struct WeatherView: View {
                             .background(Color.blue)
                             .cornerRadius(10)
                     }
-                    .padding(.bottom, 20)
                 }
-                .padding()
+                .padding(.top, 20)
+                .padding(.horizontal)
                 
-                Spacer()
+                Spacer(minLength: 0)
                 
                 // DatePicker
                 if isDatePickerVisible {
-                    DatePicker("Select a Date", selection: $selectedDate, displayedComponents: .date)
-                        .datePickerStyle(GraphicalDatePickerStyle())
-                        .padding()
+                    VStack{
+                        DatePicker("Select Date", selection: $selectedDate, in: dateRange, displayedComponents: .date)
+                            .labelsHidden()
+                            .datePickerStyle(.graphical)
+                            .padding(.horizontal) // Add horizontal padding
+                            .padding(.bottom, 20)
+                        .frame(maxHeight: 350)
+                    
+                    // Print selected date in console
+                    Button(action: {
+                        print("Selected Date:", selectedDate)
+
+                    }) {
+                        Text("Print Selected Date")
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color.blue)
+                            .cornerRadius(10)
+                    }}
                 }
             }
         }
         .foregroundColor(.white)
         .navigationTitle("Weather Forecast")
     }
-}
+    
+   
 
+
+
+
+}
 
 #Preview{
     WeatherView()
