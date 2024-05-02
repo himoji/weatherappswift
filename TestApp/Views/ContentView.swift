@@ -1,11 +1,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    // State variable to track whether to navigate to the WeatherView
-    @State private var navigateToWeatherView = false
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 Spacer()
                 
@@ -35,7 +33,7 @@ struct ContentView: View {
                 
                 Spacer()
                 
-                NavigationLink(destination: CitiesList()) {
+                NavigationLink(destination: CitiesList(), label: {
                     Text("Get Started")
                         .font(.headline)
                         .fontWeight(.bold)
@@ -45,9 +43,14 @@ struct ContentView: View {
                         .background(Color.blue)
                         .cornerRadius(10)
                         .padding()
-                }
+                })
             }
+            
             .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
+            
+            
+            
         }
     }
 }
