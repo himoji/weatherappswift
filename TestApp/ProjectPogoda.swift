@@ -1,8 +1,10 @@
-//
-//  ProjectPogoda.swift
-//  TestApp
-//
-//  Created by Lyaka on 02.05.2024.
-//
+import SwiftUI
 
-import Foundation
+@main
+struct ProjectPogoda: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+    }
+}

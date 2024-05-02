@@ -2,7 +2,7 @@ import SwiftUI
 
 struct CitiesList: View {
     var body: some View {
-        NavigationSplitView {
+        NavigationStack {
             List(cities) { city in
 
                 NavigationLink {
@@ -14,10 +14,7 @@ struct CitiesList: View {
             }
             .navigationTitle("Cities")
 
-        } detail: {
-            Text("Select a city")
         }
-
     }
 
 }

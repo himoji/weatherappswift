@@ -17,5 +17,5 @@ struct CitiesRow: View {
 }
 
 #Preview {
-    CitiesRow()
+    CitiesRow(city: cities[0])
 }
