@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  TestApp
-//
-//  Created by User on 26.10.2023.
-//
-
 import SwiftUI
 
 struct ContentView: View {
@@ -42,24 +35,11 @@ struct ContentView: View {
                 
                 Spacer()
                 
-                Button(action: {
-                    // Set the state variable to true to navigate to WeatherView
-                    navigateToWeatherView = true
-                }) {
-                    Text("Get Started")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color.blue)
-                        .cornerRadius(10)
-                }
+                NavigationLink("Get started", value: Color.mint)
                 .padding()
                 
-                // Navigation to WeatherView using fullScreenCover
-                .fullScreenCover(isPresented: $navigateToWeatherView, content: WeatherView.init)
             }
             .padding()
-            .navigationBarHidden(true) // Hide navigation bar in the main page
         }
     }
 }

@@ -1,0 +1,13 @@
+[
+  {
+    "name": "Astana",
+    "country": "Kazakhstan",
+    "id": 1001,
+    "coordinates": {
+      "longitude": 71.449074,
+      "latitude": 51.169392
+    },
+    "description": "Astana, previously known as Akmolinsk, Tselinograd, Akmola, and most recently Nur-Sultan, is the capital city of Kazakhstan.",
+    "imageName": "astana"
+  }
+]
