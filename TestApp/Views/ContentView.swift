@@ -7,16 +7,16 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Welcome to WeatherWise")
-                    .font(.title)
+                Spacer()
+                
+                Text("Welcome to ProjectPogoda")
+                    .font(.largeTitle)
                     .fontWeight(.bold)
                     .padding()
                 
                 Text("Stay Ahead of the Weather")
                     .font(.headline)
                     .foregroundColor(.gray)
-                
-                Spacer()
                 
                 Image(systemName: "cloud.sun.fill")
                     .resizable()
@@ -35,15 +35,22 @@ struct ContentView: View {
                 
                 Spacer()
                 
-                NavigationLink("Get started", value: Color.mint)
-                .padding()
-                
+                NavigationLink(destination: CitiesList()) {
+                    Text("Get Started")
+                        .font(.headline)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.blue)
+                        .cornerRadius(10)
+                        .padding()
+                }
             }
-            .padding()
+            .navigationBarHidden(true)
         }
     }
 }
-
 #Preview {
     ContentView()
 }
