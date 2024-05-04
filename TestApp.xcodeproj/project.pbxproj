@@ -10,7 +10,6 @@
 		0D0E535C2BE3C5CB00F44199 /* CirlceImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0E534D2BE3C5CB00F44199 /* CirlceImage.swift */; };
 		0D0E535D2BE3C5CB00F44199 /* CitiesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0E534E2BE3C5CB00F44199 /* CitiesList.swift */; };
 		0D0E535E2BE3C5CB00F44199 /* CitiesRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0E534F2BE3C5CB00F44199 /* CitiesRow.swift */; };
-		0D0E535F2BE3C5CB00F44199 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0E53502BE3C5CB00F44199 /* ContentView.swift */; };
 		0D0E53602BE3C5CB00F44199 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0E53512BE3C5CB00F44199 /* MapView.swift */; };
 		0D0E53612BE3C5CB00F44199 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0E53522BE3C5CB00F44199 /* WeatherView.swift */; };
 		0D0E53622BE3C5CB00F44199 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D0E53542BE3C5CB00F44199 /* Preview Assets.xcassets */; };
@@ -19,6 +18,12 @@
 		0D0E53652BE3C5CB00F44199 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0E53592BE3C5CB00F44199 /* ModelData.swift */; };
 		0D0E53682BE3C64800F44199 /* ProjectPogoda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0E53672BE3C64800F44199 /* ProjectPogoda.swift */; };
 		0D0E536A2BE3CA7F00F44199 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D0E53692BE3CA7F00F44199 /* Media.xcassets */; };
+		0DA1ABDD2BE560C200FA43A4 /* Keys.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0DA1ABDC2BE560C200FA43A4 /* Keys.xcconfig */; };
+		0DA1ABDE2BE560C200FA43A4 /* Keys.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0DA1ABDC2BE560C200FA43A4 /* Keys.xcconfig */; };
+		0DA1ABDF2BE560C200FA43A4 /* Keys.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0DA1ABDC2BE560C200FA43A4 /* Keys.xcconfig */; };
+		0DA1ABE22BE5638700FA43A4 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA1ABE12BE5638700FA43A4 /* Environment.swift */; };
+		0DA1ABE42BE5682D00FA43A4 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA1ABE32BE5682D00FA43A4 /* Api.swift */; };
+		0DA1ABE62BE5689300FA43A4 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0DA1ABE52BE5689300FA43A4 /* .gitignore */; };
 		CE9F75922AEABD8D00F56AD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE9F75912AEABD8D00F56AD1 /* Assets.xcassets */; };
 		CE9F75952AEABD8D00F56AD1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE9F75942AEABD8D00F56AD1 /* Preview Assets.xcassets */; };
 		CE9F759F2AEABD8E00F56AD1 /* TestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F759E2AEABD8E00F56AD1 /* TestAppTests.swift */; };
@@ -47,7 +52,6 @@
 		0D0E534D2BE3C5CB00F44199 /* CirlceImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CirlceImage.swift; sourceTree = "<group>"; };
 		0D0E534E2BE3C5CB00F44199 /* CitiesList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesList.swift; sourceTree = "<group>"; };
 		0D0E534F2BE3C5CB00F44199 /* CitiesRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitiesRow.swift; sourceTree = "<group>"; };
-		0D0E53502BE3C5CB00F44199 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0D0E53512BE3C5CB00F44199 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		0D0E53522BE3C5CB00F44199 /* WeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		0D0E53542BE3C5CB00F44199 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -56,6 +60,11 @@
 		0D0E53592BE3C5CB00F44199 /* ModelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		0D0E53672BE3C64800F44199 /* ProjectPogoda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectPogoda.swift; sourceTree = "<group>"; };
 		0D0E53692BE3CA7F00F44199 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		0DA1ABDC2BE560C200FA43A4 /* Keys.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Keys.xcconfig; sourceTree = "<group>"; };
+		0DA1ABE02BE5624200FA43A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0DA1ABE12BE5638700FA43A4 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		0DA1ABE32BE5682D00FA43A4 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		0DA1ABE52BE5689300FA43A4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		CE9F758A2AEABD8C00F56AD1 /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE9F75912AEABD8D00F56AD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE9F75942AEABD8D00F56AD1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -97,7 +106,6 @@
 				0D0E534D2BE3C5CB00F44199 /* CirlceImage.swift */,
 				0D0E534E2BE3C5CB00F44199 /* CitiesList.swift */,
 				0D0E534F2BE3C5CB00F44199 /* CitiesRow.swift */,
-				0D0E53502BE3C5CB00F44199 /* ContentView.swift */,
 				0D0E53512BE3C5CB00F44199 /* MapView.swift */,
 				0D0E53522BE3C5CB00F44199 /* WeatherView.swift */,
 			);
@@ -125,6 +133,8 @@
 			children = (
 				0D0E53582BE3C5CB00F44199 /* City.swift */,
 				0D0E53592BE3C5CB00F44199 /* ModelData.swift */,
+				0DA1ABE12BE5638700FA43A4 /* Environment.swift */,
+				0DA1ABE32BE5682D00FA43A4 /* Api.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -132,6 +142,8 @@
 		CE9F75812AEABD8B00F56AD1 = {
 			isa = PBXGroup;
 			children = (
+				0DA1ABE52BE5689300FA43A4 /* .gitignore */,
+				0DA1ABDC2BE560C200FA43A4 /* Keys.xcconfig */,
 				0D0E53692BE3CA7F00F44199 /* Media.xcassets */,
 				CE9F758C2AEABD8C00F56AD1 /* TestApp */,
 				CE9F759D2AEABD8E00F56AD1 /* TestAppTests */,
@@ -153,6 +165,7 @@
 		CE9F758C2AEABD8C00F56AD1 /* TestApp */ = {
 			isa = PBXGroup;
 			children = (
+				0DA1ABE02BE5624200FA43A4 /* Info.plist */,
 				0D0E535A2BE3C5CB00F44199 /* Model */,
 				0D0E53552BE3C5CB00F44199 /* Preview Content */,
 				0D0E53572BE3C5CB00F44199 /* Resources */,
@@ -294,7 +307,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D0E536A2BE3CA7F00F44199 /* Media.xcassets in Resources */,
+				0DA1ABE62BE5689300FA43A4 /* .gitignore in Resources */,
 				0D0E53632BE3C5CB00F44199 /* cityData.json in Resources */,
+				0DA1ABDD2BE560C200FA43A4 /* Keys.xcconfig in Resources */,
 				CE9F75952AEABD8D00F56AD1 /* Preview Assets.xcassets in Resources */,
 				0D0E53622BE3C5CB00F44199 /* Preview Assets.xcassets in Resources */,
 				CE9F75922AEABD8D00F56AD1 /* Assets.xcassets in Resources */,
@@ -305,6 +320,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DA1ABDE2BE560C200FA43A4 /* Keys.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +328,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DA1ABDF2BE560C200FA43A4 /* Keys.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,10 +343,11 @@
 				0D0E535D2BE3C5CB00F44199 /* CitiesList.swift in Sources */,
 				0D0E53642BE3C5CB00F44199 /* City.swift in Sources */,
 				0D0E53682BE3C64800F44199 /* ProjectPogoda.swift in Sources */,
-				0D0E535F2BE3C5CB00F44199 /* ContentView.swift in Sources */,
+				0DA1ABE22BE5638700FA43A4 /* Environment.swift in Sources */,
 				0D0E535C2BE3C5CB00F44199 /* CirlceImage.swift in Sources */,
 				0D0E53652BE3C5CB00F44199 /* ModelData.swift in Sources */,
 				0D0E535E2BE3C5CB00F44199 /* CitiesRow.swift in Sources */,
+				0DA1ABE42BE5682D00FA43A4 /* Api.swift in Sources */,
 				0D0E53612BE3C5CB00F44199 /* WeatherView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,6 +387,7 @@
 /* Begin XCBuildConfiguration section */
 		CE9F75AC2AEABD8E00F56AD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DA1ABDC2BE560C200FA43A4 /* Keys.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -432,6 +451,7 @@
 		};
 		CE9F75AD2AEABD8E00F56AD1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DA1ABDC2BE560C200FA43A4 /* Keys.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -488,15 +508,17 @@
 		};
 		CE9F75AF2AEABD8E00F56AD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DA1ABDC2BE560C200FA43A4 /* Keys.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TestApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "TestApp/Preview\\ Content TestApp/Keys.xcconfig";
 				DEVELOPMENT_TEAM = MG92VR2EEW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TestApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -512,23 +534,26 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		CE9F75B02AEABD8E00F56AD1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DA1ABDC2BE560C200FA43A4 /* Keys.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TestApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "TestApp/Preview\\ Content TestApp/Keys.xcconfig";
 				DEVELOPMENT_TEAM = MG92VR2EEW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TestApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -544,14 +569,16 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		CE9F75B22AEABD8E00F56AD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DA1ABDC2BE560C200FA43A4 /* Keys.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -562,6 +589,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = homewrk.TestAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -571,6 +602,7 @@
 		};
 		CE9F75B32AEABD8E00F56AD1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DA1ABDC2BE560C200FA43A4 /* Keys.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -581,6 +613,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = homewrk.TestAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -590,14 +626,20 @@
 		};
 		CE9F75B52AEABD8E00F56AD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DA1ABDC2BE560C200FA43A4 /* Keys.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MG92VR2EEW;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = homewrk.TestAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -607,14 +649,20 @@
 		};
 		CE9F75B62AEABD8E00F56AD1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DA1ABDC2BE560C200FA43A4 /* Keys.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MG92VR2EEW;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = homewrk.TestAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
