@@ -4,7 +4,7 @@ import SwiftUI
 struct ProjectPogoda: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CitiesList()
         }
     }
 }
