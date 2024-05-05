@@ -9,5 +9,49 @@
     },
     "description": "Astana, previously known as Akmolinsk, Tselinograd, Akmola, and most recently Nur-Sultan, is the capital city of Kazakhstan.",
     "imageName": "astana"
+  },
+  {
+      "name": "Cupertino",
+      "country": "United States",
+      "id": 1002,
+      "coordinates": {
+        "longitude": -122.0322,
+        "latitude": 37.3229
+      },
+      "description": "Cupertino is a city in Santa Clara County, California, United States, directly west of San Jose on the western edge of the Santa Clara Valley with portions extending into the foothills of the Santa Cruz Mountains.",
+      "imageName": "cupertino"
+  },
+  {
+      "name": "Shymkent",
+      "country": "Kazakhstan",
+      "id": 1003,
+      "coordinates": {
+        "longitude": 69.5996,
+        "latitude": 42.3176
+      },
+      "description": "Shymkent is the third-most populous city in Kazakhstan, behind Almaty and Nur-Sultan, with a population of 1,002,291 according to the 2020 Census.",
+      "imageName": "shymkent"
   }
+,{
+    "name": "Almaty",
+    "country": "Kazakhstan",
+    "id": 1004,
+    "coordinates": {
+      "longitude": 76.9139,
+      "latitude": 43.2220
+    },
+    "description": "Almaty is the largest city in Kazakhstan, with a population of about 2 million people, about 11% of the country's total population, and more than 2.7 million in its built-up area that encompasses Talgar, Boraldai, Otegen Batyr and many other suburbs.",
+    "imageName": "almaty"
+}
+,{
+    "name": "Boston",
+    "country": "United States",
+    "id": 1005,
+    "coordinates": {
+      "longitude": -71.0589,
+      "latitude": 42.3601
+    },
+    "description": "Boston is the capital and most populous city of the Commonwealth of Massachusetts in the United States and the 24th-most populous city in the country. Boston is one of the oldest municipalities in the United States, founded on the Shawmut Peninsula in 1630 by Puritan settlers from the English town of the same name.",
+    "imageName": "boston"
+}
 ]

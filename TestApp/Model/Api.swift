@@ -3,90 +3,68 @@ import Foundation
 // Define Codable structs to represent the JSON structure
 
 struct WeatherData: Codable {
-    let cod: String
-    let message: Double
-    let cnt: Int
-    let list: [WeatherInfo]
-    let city: CityInfo
+    var cod: String
+    var message: Double
+    var cnt: Int
+    var list: [WeatherInfo]
+    var city: CityInfo
 }
 
 struct WeatherInfo: Codable {
-    let dt: TimeInterval // Ignored
-    let main: MainInfo
-    let weather: [WeatherDetail]
-    let wind: WindInfo
+    var dt: Int64
+    var main: MainInfo
+    var weather: [WeatherDetail]
+    var wind: WindInfo
     // Fields ignored: sea_level, grnd_level, temp_kf, clouds, visibility, sys, pop, dt_txt
 }
 
 struct MainInfo: Codable {
-    let temp: Double
-    let feels_like: Double
-    let temp_min: Double
-    let temp_max: Double
-    let pressure: Int // Ignored
-    let humidity: Int
+    var temp: Double
+    var feels_like: Double
+    var temp_min: Double
+    var temp_max: Double
+    var pressure: Int // Ignored
+    var humidity: Int
     // Fields ignored: sea_level, grnd_level
 }
 
 struct WeatherDetail: Codable {
-    let id: Int
-    let main: String
-    let description: String
-    let icon: String
+    var id: Int
+    var main: String
+    var description: String
+    var icon: String
 }
 
 struct WindInfo: Codable {
-    let speed: Double
-    let deg: Int
-    let gust: Double
+    var speed: Double
+    var deg: Int
+    var gust: Double
 }
 
 struct CityInfo: Codable {
     // Fields ignored: id, population
-    let name: String
-    let coord: CoordInfo
-    let country: String
-    let timezone: Int
-    let sunrise: TimeInterval
-    let sunset: TimeInterval
+    var name: String
+    var coord: CoordInfo
+    var country: String
+    var timezone: Int
+    var sunrise: Int64
+    var sunset: Int64
 }
 
 struct CoordInfo: Codable {
-    let lat: Double
-    let lon: Double
+    var lat: Double
+    var lon: Double
 }
 
-// API Parser function
-
-func parseWeatherData(from data: Data) -> Result<WeatherData, Error> {
-    do {
-        let weatherData = try JSONDecoder().decode(WeatherData.self, from: data)
-        // Check if cod is 200
-        if weatherData.cod != "200" {
-            return .failure(NSError(domain: "API Error", code: Int(weatherData.cod) ?? 0, userInfo: nil))
-        }
-        return .success(weatherData)
-    } catch {
-        return .failure(error)
-    }
-}
-
-// Example usage
+// Example usage:
 /*
-let url = URL(string: "https://api.openweathermap.org/data/2.5/forecast?lat=\(locationCoordinate.latitude)&lon=\(locationCoordinate.longitude)&appid=\(Environment.apiKey)&units=metric&cnt=1")!
-let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-    guard let data = data, error == nil else {
-        print("Error:", error ?? "Unknown error")
-        return
-    }
-    
-    switch parseWeatherData(from: data) {
-    case .success(let weatherData):
+WeatherFetcher.getInfo(locationCoordinate: (latitude: 51.5074, longitude: 0.1278)) { result in
+    switch result {
+    case .success(var weatherData):
         print("Sunrise time:", weatherData.city.sunrise)
         // Access other weather data properties as needed
-    case .failure(let error):
-        print("Error parsing weather data:", error)
+    case .failure(var error):
+        print("Error:", error)
     }
 }
-task.resume()
 */

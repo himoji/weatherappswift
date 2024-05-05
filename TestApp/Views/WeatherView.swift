@@ -13,70 +13,20 @@ struct WeatherView: View {
             
             
             CircleImage(image: city.image)
-                .offset(y: -130)
-                .padding(.bottom, -130)
+                .offset(y: -180)
+                .padding(.bottom, -220)
                 
-            
-            
-            WeatherDetailsView(city: city, temperature: 12.0)
-                .padding(.top, 80)
-                .padding(.leading, 10)
+            WeatherDetailsView(city: city)
+                
         }
         .navigationTitle(city.name)
         .navigationBarTitleDisplayMode(.inline)
     }
 }
 
-struct WeatherDetailsView: View {
-    var city: City
-    var temperature: Float
-    
-    var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            // City name
-            Text("\(city.name), \(city.country)")
-                .font(.title)
-                .fontWeight(.bold)
-                .foregroundColor(.primary)
-            
-            Divider()
-            
-            // Temperature
-            HStack {
-                Text("Temperature:")
-                    .font(.headline)
-                    .foregroundColor(.primary)
-                Text("\(String(format: "%.1f", temperature))°C")
-                    .font(.headline)
-                    .foregroundColor(.primary)
-                Text("\(city.apiLink)")
-            }
-            
-            // Conditions
-            HStack {
-                Text("Conditions:")
-                    .font(.headline)
-                    .foregroundColor(.primary)
-                Text("Sunny with some wind")
-                    .font(.headline)
-                    .foregroundColor(.primary)
-            }
-            
-            Divider()
-            
-            // About city
-            Text("About \(city.name)")
-                .font(.title2)
-                .fontWeight(.bold)
-            
-            Text(city.description)
-                .font(.body)
-        }
-    }
-}
 
 #Preview {
-    WeatherView(city: cities[0])
+    WeatherView(city: cities[2])
 }
 
 
