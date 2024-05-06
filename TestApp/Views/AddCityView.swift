@@ -5,7 +5,12 @@ struct AddCityView: View {
     @State private var cityName = ""
     @State private var countryName = ""
     @State private var coordinates = CLLocationCoordinate2D(latitude: 49.8015465, longitude: 73.1)
-    @State private var city: City?
+    @State private var city: City = City(id: 0, name: "", country: "", description: "", imageName: "", coordinates: City.Coordinates(latitude: 49.8015465, longitude: 73.1))
+    @State private var saveResult: SaveCityResult? = nil
+    
+    func saveCity(_ city: City) {
+        saveResult = saveCity(city)
+    }
     
     var body: some View {
         VStack {
@@ -26,20 +31,46 @@ struct AddCityView: View {
             }
             .padding()
             
-            Button(action: {
-                if let city = city {
-                    saveCity(city: city)
-                }
-            }) {
-                Text("Save City")
+            Button("Save City") {
+                saveCity(city)
             }
-            .disabled(cityName.isEmpty || coordinates.latitude == 49.8015465 && coordinates.longitude == 73.1)
-            .padding()
+            .disabled(cityName.isEmpty || coordinates.latitude == 49.8015465 && coordinates.longitude == 73.1) // Disable button if duplicate exists
+            .overlay(
+                saveResult.map { result in
+                    Text(message(for: result))
+                        .foregroundColor(color(for: result))
+                        .padding()
+                        .background(RoundedRectangle(cornerRadius: 8).fill(color(for: result).opacity(0.3)))
+                }
+            )
             
             MapView(coordinate: coordinates)
                 .ignoresSafeArea()
         }
     }
+    
+    private func message(for result: SaveCityResult) -> String {
+        switch result {
+        case .success:
+            return "City saved successfully!"
+        case .duplicateCity:
+            return "A city with the same location already exists."
+        case .saveError(let error):
+            return "Error saving city: \(error.localizedDescription)"
+        }
+    }
+    
+    private func color(for result: SaveCityResult) -> Color {
+        switch result {
+        case .success:
+            return .green
+        case .duplicateCity:
+            return .yellow
+        case .saveError:
+            return .red
+        }
+    }
+    
     
     func searchCity() {
         let request = MKLocalSearch.Request()
@@ -70,42 +101,30 @@ struct AddCityView: View {
         }
     }
     
-    func saveCity(city: City) {
-        DispatchQueue.global(qos: .background).async {
-            let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-            let fileURL = documentsDirectory.appendingPathComponent("cityData.json")
+    func saveCity(_ city: City) -> SaveCityResult {
+        var cities: [City] = getCitiesFromBundle()
+        
+        if hasIdenticalCoordinates(cities: cities, city1: city) {
+            return .duplicateCity
+        }
+        
+        cities.append(city)
             
-            var cities: [City]
-            
-            do {
-                let jsonData = try Data(contentsOf: fileURL)
-                let decoder = JSONDecoder()
-                cities = try decoder.decode([City].self, from: jsonData)
-            } catch {
-                print("Error loading existing city data: \(error)")
-                cities = []
-            }
-            
-            cities.append(city)
-            
-            let encoder = JSONEncoder()
-            encoder.outputFormatting = .prettyPrinted
-            
-            do {
-                let encoded = try encoder.encode(cities)
-                try encoded.write(to: fileURL)
-                print("City data appended and saved to: \(fileURL)")
-            } catch {
-                print("Error saving city data: \(error)")
-            }
+        do {
+            print(cities)
+            try saveCitiesToDocuments(cities)
+            return .success
+        } catch {
+            print("\(error)")
+            return .saveError(error)
         }
     }
 }
 
-struct CityAnnotation: Identifiable {
-    let id = UUID()
-    let coordinate: CLLocationCoordinate2D
-    let title: String
+enum SaveCityResult {
+  case success
+  case duplicateCity
+  case saveError(Error)
 }
 
 struct AddCityView_Previews: PreviewProvider {

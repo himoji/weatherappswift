@@ -2,7 +2,7 @@ import SwiftUI
 
 struct CitiesList: View {
     @State private var isAddCitySheetPresented = false
-    @State private var cities: [City] = load()
+    @State private var cities: [City] = getCitiesFromUserDocuments()
     
     var body: some View {
         NavigationView {
@@ -29,12 +29,21 @@ struct CitiesList: View {
             AddCityView()
         }
         .onDisappear {
-            save() // Save cities data when the view disappears
+            do {
+                try saveCitiesToDocuments(cities)
+            } catch {
+                return
+            }
         }
     }
     
     func deleteCity(at offsets: IndexSet) {
         cities.remove(atOffsets: offsets)
+        do {
+            try saveCitiesToDocuments(cities)
+        } catch {
+            return
+        }
     }
 }
 
