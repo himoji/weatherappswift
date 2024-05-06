@@ -10,6 +10,7 @@ struct WeatherView: View {
         ScrollView {
             MapView(coordinate: city.locationCoordinate)
                 .frame(height: 300)
+                
             
             
             CircleImage(image: city.image)
