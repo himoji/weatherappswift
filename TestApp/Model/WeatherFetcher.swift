@@ -24,11 +24,13 @@ class WeatherFetcher {
   // MARK: - Cache Management
 
   private static func isCacheExpired(weatherData: WeatherData) -> Bool {
+      print("[CHECK]: Is cache exprired")
     guard let timestamp = weatherData.list.first?.dt else { return true }
     return Date().timeIntervalSince1970 - TimeInterval(timestamp) >= cacheExpirationTime
   }
 
   private static func loadFromCache(locationCoordinate: (latitude: Double, longitude: Double)) -> WeatherData? {
+      print("[READ]: Getting info from the cache")
     let fileName = "\(locationCoordinate.latitude)_\(locationCoordinate.longitude).json"
     guard let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent(fileName) else {
       return nil
@@ -44,6 +46,7 @@ class WeatherFetcher {
   }
 
   private static func saveToCache(weatherData: WeatherData, locationCoordinate: (latitude: Double, longitude: Double)) {
+      print("[WRITE]: Saving cache")
     let fileName = "\(locationCoordinate.latitude)_\(locationCoordinate.longitude).json"
     guard let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent(fileName) else {
       return
@@ -60,6 +63,7 @@ class WeatherFetcher {
   // MARK: - Network Fetching
 
   private static func fetchFromAPI(locationCoordinate: (latitude: Double, longitude: Double), completion: @escaping (Result<WeatherData, Error>) -> Void) {
+      print("[FETCH]: Getting info from the API")
     guard let url = apiURLWithParameters(locationCoordinate: locationCoordinate) else {
       completion(.failure(NSError(domain: "URL Error", code: 0, userInfo: nil)))
       return

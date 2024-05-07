@@ -20,27 +20,59 @@ struct WeatherDetailsView: View {
                 Divider()
                 
                 if let weatherData = weatherViewModel.weatherData {
-                    VStack(alignment: .leading, spacing: 12) {
-                        WeatherInfoView(title: "Temperature", value: "\(String(format: "%.1f", weatherData.list[0].main.temp))°C")
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
+                    VStack(alignment: .center, spacing: 20) {
                         
-                        WeatherInfoView(title: "Conditions", value: "\(weatherData.list[0].weather[0].description.capitalized)")
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
+                        // Weather temperature information
+                        HStack {
+                            VStack(alignment: .center) {
+                                Text("Min Temp").padding()
+                                Text("\(String(format: "%.1f",weatherData.list[0].main.temp_min))°C").font(.title3)
+                            }
+                            
+                            VStack(alignment: .center) {
+                                Text("Min Temp").padding()
+                                Text("\(String(format: "%.1f",weatherData.list[0].main.temp))°C").font(.title3)
+                            }
+                            
+                            VStack(alignment: .center) {
+                                Text("Min Temp").padding()
+                                Text("\(String(format: "%.1f",weatherData.list[0].main.temp_max))°C").font(.title3)
+                            }
+                        }
                         
-                        WeatherInfoView(title: "Sunrise", value: formattedDate(date: Date(timeIntervalSince1970: TimeInterval(weatherData.city.sunrise)), timezoneOffset: weatherData.city.timezone))
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
                         
-                        WeatherInfoView(title: "Sunset", value: formattedDate(date: Date(timeIntervalSince1970: TimeInterval(weatherData.city.sunset)), timezoneOffset: weatherData.city.timezone))
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
+                        VStack(alignment: .center) {
+                            // Weather description
+                            Text("Weather:")
+                                .font(.headline)
+                                .fontWeight(.regular)
+                                .padding()
+                            Text("\(weatherData.list[0].weather[0].description.capitalized)")
+                                .font(.title3)
+                                .foregroundColor(.primary)
+                        }
                         
-                        WeatherInfoView(title: "Local time", value: formattedDate(date: Date(), timezoneOffset: weatherData.city.timezone))
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
+                        
+                        
+                        // Other weather information
+                        HStack {
+                            VStack(alignment: .center) {
+                                Text("Humidity").padding()
+                                Text("\(weatherData.list[0].main.humidity)%").font(.title3)
+                            }
+                            
+                            VStack(alignment: .center) {
+                                Text("Pressure").padding()
+                                Text("\(weatherData.list[0].main.pressure) gPa").font(.title3)
+                            }
+                            
+                            VStack(alignment: .center) {
+                                Text("Feels Like").padding()
+                                Text("\(String(format: "%.1f",weatherData.list[0].main.feels_like))°C").font(.title3)
+                            }
+                        }
                     }
+                    
                 } else if let error = weatherViewModel.error {
                     Text("Error: \(error.localizedDescription)")
                         .foregroundColor(.red)
@@ -48,35 +80,31 @@ struct WeatherDetailsView: View {
                     ProgressView()
                 }
                 
-                Divider()
                 
-                Text("About \(city.name)")
+                
+                if !city.description.isEmpty {
+                  Divider()
+                    
+                  Text("About \(city.name)")
                     .font(.title)
                     .fontWeight(.bold)
-                
-                Text(city.description)
+                  Text(city.description)
                     .font(.body)
-            }
-            .padding()
+                }
+
+            }.padding()
         }
         .navigationBarTitle(Text("Weather Details"), displayMode: .inline)
-        .onAppear { 
-// TODO: - Make like 
-//      Min Temp        Temp        Max Temp
-//          0 C        11 C           23 C
-//
-//                  Weather:
-//             weather description
-//
-//      humidity     pressure       feels like
-//        1231       1232131          24 c
-
+        .onAppear {
             fetchCity()
         }
     }
     
     func fetchCity() {
-        weatherViewModel.fetchWeatherData()
+        // Call fetchWeatherData only if weatherData is nil
+        if weatherViewModel.weatherData == nil {
+            weatherViewModel.fetchWeatherData()
+        }
     }
     
     private func formattedDate(date: Date, timezoneOffset: Int) -> String {
@@ -112,7 +140,6 @@ class WeatherViewModel: ObservableObject {
     
     init(city: City) {
         self.city = city
-        fetchWeatherData()
     }
     
     func fetchWeatherData() {

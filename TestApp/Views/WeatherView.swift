@@ -12,8 +12,7 @@ struct WeatherView: View {
                 .frame(height: 300)
                 
             
-            
-            CircleImage(image: city.image)
+            CircleImage(image: city.imageName.isEmpty ? nil : city.image)
                 .offset(y: -180)
                 .padding(.bottom, -220)
                 

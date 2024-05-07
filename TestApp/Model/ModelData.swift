@@ -4,10 +4,7 @@
 
 import Foundation
 
-/// A struct representing a city with its name and location coordinates
-public struct City {
-  // ... (Add properties for city name and location coordinates)
-}
+public var cities = getCitiesFromUserDocuments()
 
 // MARK: - Loading City Data
 
