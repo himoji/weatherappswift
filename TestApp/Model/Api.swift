@@ -23,9 +23,8 @@ struct MainInfo: Codable {
     var feels_like: Double
     var temp_min: Double
     var temp_max: Double
-    var pressure: Int // Ignored
+    var pressure: Int
     var humidity: Int
-    // Fields ignored: sea_level, grnd_level
 }
 
 struct WeatherDetail: Codable {
@@ -55,16 +54,3 @@ struct CoordInfo: Codable {
     var lat: Double
     var lon: Double
 }
-
-// Example usage:
-/*
-WeatherFetcher.getInfo(locationCoordinate: (latitude: 51.5074, longitude: 0.1278)) { result in
-    switch result {
-    case .success(var weatherData):
-        print("Sunrise time:", weatherData.city.sunrise)
-        // Access other weather data properties as needed
-    case .failure(var error):
-        print("Error:", error)
-    }
-}
-*/

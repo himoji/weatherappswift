@@ -60,7 +60,17 @@ struct WeatherDetailsView: View {
             .padding()
         }
         .navigationBarTitle(Text("Weather Details"), displayMode: .inline)
-        .onAppear {
+        .onAppear { 
+// TODO: - Make like 
+//      Min Temp        Temp        Max Temp
+//          0 C        11 C           23 C
+//
+//                  Weather:
+//             weather description
+//
+//      humidity     pressure       feels like
+//        1231       1232131          24 c
+
             fetchCity()
         }
     }

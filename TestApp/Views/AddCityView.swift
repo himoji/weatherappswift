@@ -96,6 +96,7 @@ struct AddCityView: View {
                 
                 let newCity = City(id: id, name: name, country: country, description: "", imageName: "", coordinates: City.Coordinates(latitude: coordinates.latitude, longitude: coordinates.longitude))
                 self.city = newCity
+                self.countryName = country
                 self.coordinates = coordinates
             }
         }
