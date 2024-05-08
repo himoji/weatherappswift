@@ -30,12 +30,12 @@ struct WeatherDetailsView: View {
                             }
                             
                             VStack(alignment: .center) {
-                                Text("Min Temp").padding()
+                                Text("Current temp").padding()
                                 Text("\(String(format: "%.1f",weatherData.list[0].main.temp))°C").font(.title3)
                             }
                             
                             VStack(alignment: .center) {
-                                Text("Min Temp").padding()
+                                Text("Max Temp").padding()
                                 Text("\(String(format: "%.1f",weatherData.list[0].main.temp_max))°C").font(.title3)
                             }
                         }
@@ -43,7 +43,7 @@ struct WeatherDetailsView: View {
                         
                         VStack(alignment: .center) {
                             // Weather description
-                            Text("Weather:")
+                            Text("Weather")
                                 .font(.headline)
                                 .fontWeight(.regular)
                                 .padding()
@@ -67,8 +67,26 @@ struct WeatherDetailsView: View {
                             }
                             
                             VStack(alignment: .center) {
-                                Text("Feels Like").padding()
+                                Text("Feels like").padding()
                                 Text("\(String(format: "%.1f",weatherData.list[0].main.feels_like))°C").font(.title3)
+                            }
+                        }
+
+                        // Time information
+                        HStack {
+                            VStack(alignment: .center) {
+                                Text("Sunrise").padding()
+                                Text("\(formattedDate(date: Date(timeIntervalSince1970: TimeInterval(weatherData.city.sunrise)), timezoneOffset: weatherData.city.timezone))").font(.title3)
+                            }
+                            
+                            VStack(alignment: .center) {
+                                Text("Current time").padding()
+                                Text("\(formattedDate(date: Date(), timezoneOffset: weatherData.city.timezone))").font(.title3)
+                            }
+                            
+                            VStack(alignment: .center) {
+                                Text("Sunset").padding()
+                                Text("\(formattedDate(date: Date(timeIntervalSince1970: TimeInterval(weatherData.city.sunset)), timezoneOffset: weatherData.city.timezone))").font(.title3)
                             }
                         }
                     }
