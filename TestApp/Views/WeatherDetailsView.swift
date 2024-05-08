@@ -30,7 +30,7 @@ struct WeatherDetailsView: View {
                             }
                             
                             VStack(alignment: .center) {
-                                Text("Current temp").padding()
+                                Text("Temp").padding()
                                 Text("\(String(format: "%.1f",weatherData.list[0].main.temp))°C").font(.title3)
                             }
                             
@@ -39,6 +39,8 @@ struct WeatherDetailsView: View {
                                 Text("\(String(format: "%.1f",weatherData.list[0].main.temp_max))°C").font(.title3)
                             }
                         }
+                        
+                        Divider()
                         
                         
                         VStack(alignment: .center) {
@@ -52,7 +54,7 @@ struct WeatherDetailsView: View {
                                 .foregroundColor(.primary)
                         }
                         
-                        
+                        Divider()
                         
                         // Other weather information
                         HStack {
@@ -71,6 +73,8 @@ struct WeatherDetailsView: View {
                                 Text("\(String(format: "%.1f",weatherData.list[0].main.feels_like))°C").font(.title3)
                             }
                         }
+                        
+                        Divider()
 
                         // Time information
                         HStack {
